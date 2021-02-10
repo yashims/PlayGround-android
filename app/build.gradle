@@ -50,7 +50,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
 
-    implementation "com.google.cloud:google-cloud-speech:1.24.10"
+    // FIXME: Can not build with firebase-pref
+    implementation platform('com.google.cloud:libraries-bom:16.3.0')
+    implementation 'com.google.cloud:google-cloud-speech'
+
 
     implementation platform('com.google.firebase:firebase-bom:26.4.0')
 //    implementation 'com.google.firebase:firebase-analytics-ktx'
@@ -59,7 +62,8 @@ dependencies {
 //    implementation 'com.google.firebase:firebase-crashlytics'
 //    implementation "com.google.firebase:firebase-analytics"
 
-//    implementation "com.google.firebase:firebase-perf"
+    // FIXME: Can not build with google-cloud-speech
+    implementation "com.google.firebase:firebase-perf"
 
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
